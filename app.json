@@ -32,6 +32,11 @@
         "value": "",
         "required": true
       },
+      "Almortagel": {
+        "description": "ضيف يوزر قناتك او سيبها كما هيا",
+        "value": "wofkc",
+        "required": true
+      },
       "OWNER_ID": {
         "description": "The user id of user whom you would like to add as OWNER.",
         "value": "",

@@ -17,7 +17,7 @@ numpy==1.24.1
 pillow==9.4.0
 psutil
 pyrogram==2.0.97
-py-tgcalls==0.9.7
+py-tgcalls==1.2.1
 python-dotenv==0.21.1
 tgcrypto==1.2.5
 speedtest-cli==2.1.3

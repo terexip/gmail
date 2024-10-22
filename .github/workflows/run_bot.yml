@@ -16,15 +16,17 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
-          python-version: '3.9'  # تأكد من استخدام الإصدار الصحيح
+          python-version: '3.9'
 
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install -r requirements.txt  # تأكد من وجود ملف requirements.txt
+          pip install -r requirements.txt
+
+      - name: Set server time
+        run: |
+          sudo timedatectl set-timezone UTC
+          sudo hwclock --systohc
 
       - name: Run the bot
-        run: |
-          # ضبط الوقت
-          sudo timedatectl set-timezone UTC  # قم بتغيير المنطقة الزمنية إذا لزم الأمر
-          python -m AnonXMusic  # تأكد من الأمر الصحيح لتشغيل البوت
+        run: python -m AnonXMusic

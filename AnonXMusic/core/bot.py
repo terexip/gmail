@@ -16,7 +16,7 @@ class Anony(Client):
             bot_token=config.BOT_TOKEN,
             in_memory=True,
             parse_mode=ParseMode.HTML,
-            max_concurrent_transmissions=7,
+            # تمت إزالة معامل max_concurrent_transmissions
         )
 
     async def start(self):

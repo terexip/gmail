@@ -29,6 +29,11 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt  # تأكد من وجود هذا الملف ويحتوي على المكتبات
 
+      - name: Synchronize time
+        run: |
+          sudo apt-get install -y ntp  # تثبيت NTP
+          sudo service ntp restart  # إعادة تشغيل خدمة NTP
+
       - name: Run the bot
         run: |
           python -m AnonXMusic  # استخدم اسم المجلد الصحيح لتشغيل البوت

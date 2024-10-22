@@ -20,8 +20,11 @@ jobs:
 
       - name: Synchronize Time
         run: |
-          sudo apt-get install ntpdate
+          sudo apt-get update
+          sudo apt-get install -y ntp
+          sudo service ntp stop
           sudo ntpdate time.google.com
+          sudo service ntp start
 
       - name: Install Dependencies
         run: |

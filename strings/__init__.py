@@ -1,6 +1,5 @@
 import os
 from typing import List
-
 import yaml
 
 languages = {}
@@ -9,6 +8,17 @@ languages_present = {}
 
 def get_string(lang: str):
     return languages[lang]
+
+
+def get_command(command_name: str, lang: str = "en"):
+    """
+    Retrieves a command from the language files.
+    If the command is not found in the specified language, it falls back to English.
+    """
+    try:
+        return languages[lang][command_name]
+    except KeyError:
+        return languages["en"].get(command_name, "Unknown command")
 
 
 for filename in os.listdir(r"./strings/langs/"):

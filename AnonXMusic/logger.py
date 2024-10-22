@@ -1,7 +1,7 @@
-import logger
+import logging  # يجب أن تستورد مكتبة logging
 
 logging.basicConfig(
-    level=logger.INFO,
+    level=logging.INFO,  # استخدم logging بدلاً من logger هنا
     format="[%(asctime)s - %(levelname)s] - %(name)s - %(message)s",
     datefmt="%d-%b-%y %H:%M:%S",
     handlers=[
@@ -10,10 +10,9 @@ logging.basicConfig(
     ],
 )
 
-logger.getLogger("httpx").setLevel(logger.ERROR)
-logger.getLogger("pyrogram").setLevel(logger.ERROR)
-logger.getLogger("pytgcalls").setLevel(logger.ERROR)
+logging.getLogger("httpx").setLevel(logging.ERROR)
+logging.getLogger("pyrogram").setLevel(logging.ERROR)
+logging.getLogger("pytgcalls").setLevel(logging.ERROR)
 
-
-def LOGGER(name: str) -> logger.Logger:
-    return logger.getLogger(name)
+def LOGGER(name: str) -> logging.Logger:  # استخدم logging هنا أيضاً
+    return logging.getLogger(name)

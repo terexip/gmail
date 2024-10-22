@@ -3,7 +3,7 @@ name: Run Telegram Bot
 on:
   push:
     branches:
-      - main  # يعمل عند أي تحديث على الفرع الرئيسي
+      - main  # سيعمل عند أي تحديث على الفرع الرئيسي
   workflow_dispatch:  # لإمكانية تشغيله يدويًا من GitHub Actions
 
 jobs:
@@ -22,7 +22,7 @@ jobs:
       - name: Install system dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y gcc python3-dev  # تثبيت المكتبات المطلوبة لبناء aiohttp
+          sudo apt-get install -y gcc python3-dev  # تثبيت المكتبات المطلوبة
 
       - name: Install dependencies
         run: |
@@ -31,4 +31,4 @@ jobs:
 
       - name: Run the bot
         run: |
-          python AnonXMusic/__main__.py  # استخدم اسم ملف التشغيل الصحيح
+          python -m AnonXMusic  # استخدم اسم المجلد الصحيح لتشغيل البوت

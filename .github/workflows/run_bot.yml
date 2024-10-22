@@ -3,37 +3,36 @@ name: Run Telegram Bot
 on:
   push:
     branches:
-      - main  # سيعمل عند أي تحديث على الفرع الرئيسي
-  workflow_dispatch:  # لإمكانية تشغيله يدويًا من GitHub Actions
+      - main
+  workflow_dispatch:
 
 jobs:
   run-bot:
-    runs-on: ubuntu-latest  # يستخدم بيئة Ubuntu
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout the repository
-        uses: actions/checkout@v2  # لجلب الكود من المستودع
+        uses: actions/checkout@v2
 
       - name: Set up Python
-        uses: actions/setup-python@v2  # إعداد بيئة بايثون
+        uses: actions/setup-python@v2
         with:
-          python-version: '3.9'  # استخدم إصدار بايثون المناسب
+          python-version: '3.9'
 
       - name: Install system dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y gcc python3-dev  # تثبيت المكتبات المطلوبة
+          sudo apt-get install -y gcc python3-dev
 
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install -r requirements.txt  # تأكد من وجود هذا الملف ويحتوي على المكتبات
+          pip install -r requirements.txt
 
-      - name: Synchronize time
+      - name: Sync time
         run: |
-          sudo apt-get install -y ntp  # تثبيت NTP
-          sudo service ntp restart  # إعادة تشغيل خدمة NTP
+          sudo date -s "$(curl -s --head http://worldtimeapi.org/api/timezone/Etc/UTC | grep Date: | sed 's/Date: //g')"
 
       - name: Run the bot
         run: |
-          python -m AnonXMusic  # استخدم اسم المجلد الصحيح لتشغيل البوت
+          python -m AnonXMusic

@@ -14,7 +14,7 @@ API_HASH = getenv("API_HASH","f780b6a5873656b62d2c5a9f8be50bdc")
 BOT_TOKEN = getenv("BOT_TOKEN","5966375685:AAE4ivL6HbVQII4ml5AleUCAStiSwHk9wuA")
 
 # Get your mongo url from cloud.mongodb.com
-MONGO_DB_URI = getenv("MONGO_DB_URI","mongodb+srv://gyy028433:Braavvo07@cluster0.pu54pw4.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
+MONGO_DB_URI = getenv("MONGO_DB_URI","mongodb+srv://leaboteam:26v1HFg8p6Gml2HN@cluster0.1fx9vkz.mongodb.net/?retryWrites=true&w=majority")
 
 Almortagel = getenv("Almortagel","wofkc")
 
